@@ -18,12 +18,12 @@ export class LoginComponent {
   private router = inject(Router);
 
   hacerLogin() {
-    if (this.usuario && this.password) {
+    if (this.usuario == 'admin' && this.password == '1234') {
       this.storage.iniciarSesion(this.usuario);
       this.router.navigate(['/dashboard']);
     }
     else {
-      alert('Por favor, ingrese usuario y contraseña.');
+      alert('Usuario o contraseña incorrectos.');
     }
   }
 }
